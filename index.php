@@ -1,3 +1,7 @@
+
+<!-- https://codewithawa.com/posts/how-to-create-a-blog-in-php-and-mysql-database---db-design -->
+
+
 <!-- The first include should be config.php -->
 <?php require_once('config.php') ?>
 
