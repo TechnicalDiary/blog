@@ -51,7 +51,7 @@
 			if ( in_array($_SESSION['user']['role'], ["Admin", "Author"])) {
 				$_SESSION['message'] = "You are now logged in";
 				// redirect to admin area
-				header('location: ' . BASE_URL . 'admin/dashboard.php');
+				header('location: ' . BASE_URL . '/admin/dashboard.php');
 				exit(0);
 			} else {
 				$_SESSION['message'] = "You are now logged in";
@@ -64,8 +64,8 @@
 
 	// LOG USER IN
 	if (isset($_POST['login_btn'])) {
-		$username = esc($_POST['username']);
-		$password = esc($_POST['password']);
+		$username = $_POST['username'];
+		$password = $_POST['password'];
 
 		if (empty($username)) { array_push($errors, "Username required"); }
 		if (empty($password)) { array_push($errors, "Password required"); }
@@ -98,6 +98,7 @@
 			}
 		}
 	}
+
 	// escape value from form
 	function esc(String $value)
 	{	
@@ -109,6 +110,7 @@
 
 		return $val;
 	}
+	
 	// Get user info from user id
 	function getUserById($id)
 	{

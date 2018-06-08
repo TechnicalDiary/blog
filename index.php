@@ -32,32 +32,62 @@
 			<!-- more content still to come here ... -->
 
             <!-- Add this ... -->
-            <?php foreach ($posts as $post): ?>
-                <div class="post" style="margin-left: 0px;">
-                    <img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="">
-                    <!-- Added this if statement... -->
-                    <?php if (isset($post['topic']['name'])): ?>
-                        <a 
-                            href="<?php echo BASE_URL . 'filtered_posts.php?topic=' . $post['topic']['id'] ?>"
-                            class="btn category">
-                            <?php echo $post['topic']['name'] ?>
-                        </a>
-                    <?php endif ?>
-
-                    <a href="single_post.php?post-slug=<?php echo $post['slug']; ?>">
-                        <div class="post_info">
-                            <h3><?php echo $post['title'] ?></h3>
-                            <div class="info">
-                                <span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-                                <span class="read_more">Read more...</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php endforeach ?>
+            <div class="result">
+            
+            </div>
 		</div>
-		<!-- // Page content -->
+        <div class="ajax-load text-center" style="text-align:center;display:none;">
+            <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif">Loading More post</p>
+        </div>
 
-		<!-- footer -->
-		<?php include( ROOT_PATH . '/includes/footer.php') ?>
-		<!-- // footer -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <script >
+        var start = 0;
+        var limit = 8;
+        var reachedMax = false;
+
+        $(document).ready(function () {
+            getData();
+        });
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height())
+                getData();
+        })
+
+        function getData() {
+            if (reachedMax)
+                return;
+            $(".ajax-load").show();
+            $.ajax({
+                url:'loadMoreData.php',
+                method: 'POST',
+                dataType:'text',
+                data: {
+                    getData: 1,
+                    start: start,
+                    limit:limit
+                },
+                success: function(resposnse){
+                    if(resposnse=="reachedMax"){
+                        reachedMax = true;
+                    } else {
+                        start += limit;
+                        $(".result").append(resposnse);
+                    }
+                    $(".ajax-load").hide();
+                }
+            })
+        }
+
+    </script>
+
+    <style>
+        .ajax-load{
+            background: #e1e1e1;
+            padding: 10px 0px;
+            width: 100%;
+        }
+    </style>
