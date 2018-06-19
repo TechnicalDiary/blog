@@ -1,6 +1,7 @@
 <?php  include('config.php'); ?>
 <?php  include('includes/public_functions.php'); ?>
 <?php 
+	$errors = array(); 
 	if (isset($_GET['post-slug'])) {
 		$post = getPost($_GET['post-slug']);
 	}
@@ -44,10 +45,9 @@
 				</div>
 				<div class="card-content">
 					<?php foreach ($topics as $topic): ?>
-						<a 
-							href="<?php echo BASE_URL . '/filtered_posts.php?topic=' . $topic['id'] ?>">
+						<a href="<?php echo BASE_URL . '/filtered_posts.php?topic=' . $topic['id'] ?>">
 							<?php echo $topic['name']; ?>
-						</a> 
+						</a>
 					<?php endforeach ?>
 				</div>
 			</div>
