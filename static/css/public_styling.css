@@ -181,7 +181,7 @@ form input:focus {
 .content {
 	margin: 5px auto;
 	border-radius: 5px;
-	min-height: 400px;
+	/* min-height: 400px; */
 }
 .content:after {
 	content: "";

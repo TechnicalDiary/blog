@@ -17,7 +17,7 @@
 		<!-- Middle form - to create and edit  -->
 		<div class="action create-post-div">
 			<h1 class="page-title">Create/Edit Post</h1>
-			<form method="post" enctype="multipart/form-data" action="<?php echo BASE_URL . 'admin/create_post.php'; ?>" >
+			<form method="post" enctype="multipart/form-data" action="<?php echo BASE_URL . '/admin/create_post.php'; ?>" >
 				<!-- validation errors for the form -->
 				<?php include(ROOT_PATH . '/includes/errors.php') ?>
 

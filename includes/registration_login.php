@@ -70,7 +70,7 @@
 		if (empty($username)) { array_push($errors, "Username required"); }
 		if (empty($password)) { array_push($errors, "Password required"); }
 		if (empty($errors)) {
-			$password = md5($password); // encrypt password
+			//$password = md5($password); // encrypt password
 			$sql = "SELECT * FROM users WHERE username='$username' and password='$password' LIMIT 1";
 
 			$result = mysqli_query($conn, $sql);

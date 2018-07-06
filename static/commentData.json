@@ -1,0 +1,56 @@
+[
+    {
+        "Id": "b025c449e01bb6a89040f17e8bea004a",
+        "Author": "John Smith",
+        "Comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ParentId": null,
+        "UserAvatar": "/img/avatar.jpg",
+        "CanDelete": true,
+        "Date": "05 Jul 2018 04:50"
+    },
+    {
+        "Id": "716b1c42b8b0a6a41dfc313606565f2b",
+        "Author": "David Jones",
+        "Comment": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "ParentId": "b025c449e01bb6a89040f17e8bea004a",
+        "UserAvatar": "/img/avatar2.jpg",
+        "CanDelete": false,
+        "Date": "05 Jul 2018 04:50"
+    },
+    {
+        "Id": "19791efd8a060a9876767d986e46e522",
+        "Author": "John Smith",
+        "Comment": " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "ParentId": "716b1c42b8b0a6a41dfc313606565f2b",
+        "UserAvatar": "/img/avatar.jpg",
+        "CanDelete": false,
+        "Date": "05 Jul 2018 04:50"
+    },
+    {
+        "Id": "8bc5c089c58acce44b79259f47a2a3de",
+        "Author": "David Jones",
+        "Comment": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "ParentId": "b025c449e01bb6a89040f17e8bea004a",
+        "UserAvatar": "/img/avatar2.jpg",
+        "CanDelete": false,
+        "Date": "05 Jul 2018 04:50"
+    },
+    {
+        "Id": "b7628dbd487f72fc42cfb600ddda0711",
+        "Author": "David Jones",
+        "Comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ParentId": null,
+        "UserAvatar": "/img/avatar2.jpg",
+        "CanDelete": false,
+        "Date": "05 Jul 2018 04:50"
+    },
+    {
+        "Id": "0cf3c13944d281d47acf5394aad8cda4",
+        "Author": "John Smith",
+        "Comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "ParentId": null,
+        "UserAvatar": "/img/avatar.jpg",
+        "CanDelete": false,
+        "Date": "05 Jul 2018 04:50"
+    }
+]
